@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './SearchBox.css';
 import { API_KEY } from "./shortened"
+import { movies } from '../../actions'
+import { connect } from 'react-redux' 
 
 class SearchBox extends Component {
     state = {
@@ -18,7 +20,7 @@ class SearchBox extends Component {
         fetch(url, {
             method : 'GET',
         }).then(response => response.json())
-        .then(data => console.log(data.Search))
+        .then(jsonObj => {this.props.movies(jsonObj.Search)})
     }
     render() {
         const { searchLine } = this.state;
@@ -50,4 +52,4 @@ class SearchBox extends Component {
     }
 }
  
-export default SearchBox;
+export default connect(null, {movies})(SearchBox);

@@ -12,9 +12,9 @@ class MainPage extends Component {
                 <Header />
                 <main className="main-page__content">
                     <section className="main-page__main-section">
-                        <div className="main-page__search-box">
+                        {/* <div className="main-page__search-box">
                             <SearchBox />
-                        </div>
+                        </div> */}
                         <div className="main-page__movies">
                             <Movies />
                         </div>

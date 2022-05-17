@@ -1,8 +1,8 @@
 import movies from "./movie_reducer";
 import { combineReducers } from "redux";
-import list from "./list_redecer";
+import favorites from "./list_redecer";
 const rootReducer = combineReducers({
   movies,
-  list,
+  favorites,
 });
 export default rootReducer;

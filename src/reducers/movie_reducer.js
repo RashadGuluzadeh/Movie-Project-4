@@ -1,5 +1,5 @@
-import { MOVIES } from "../actions";
-export default function movies(state = [], action) {
+import { MOVIES } from "../actions/action";
+export function movies(state = [], action) {
   switch (action.type) {
     case MOVIES:
       console.log("Movies are:", action.items);

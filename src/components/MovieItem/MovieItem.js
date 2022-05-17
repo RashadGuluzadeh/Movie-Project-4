@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { addToList, removeFromList } from "../../actions";
+import { addToList } from "../../actions/action";
 import { connect } from "react-redux";
 import "./MovieItem.css";
 
@@ -22,7 +22,7 @@ class MovieItem extends Component {
             {Title}&nbsp;({Year})
           </h3>
           <button
-            onClick={() => this.addToList()}
+            onClick={() => this.addToList(this.props.movie)}
             disabled={this.state.favorited ? true : null}
             type="button"
             className="movie-item__add-button"
@@ -35,4 +35,6 @@ class MovieItem extends Component {
   }
 }
 
-export default connect(null, { addToList,removeFromList })(MovieItem);
+export default connect(null, { addToList: (movie) => addToList(movie) })(
+  MovieItem
+);

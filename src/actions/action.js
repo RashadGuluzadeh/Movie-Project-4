@@ -14,9 +14,9 @@ export function addToList(movie) {
     movie,
   };
 }
-export function removeFromList(movie) {
+export function removeFromList(imdbID) {
   return {
     type: DELETE_FAV,
-    movie
+    imdbID,
   }
 }

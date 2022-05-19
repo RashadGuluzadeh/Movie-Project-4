@@ -5,11 +5,11 @@ import { addFavoriteList } from "../../redux/actions";
 
 class MovieItem extends Component {
   ifIdInFavorites = (imdbID) => {
-    const active = this.props.favoritesList.find((item) => {
+    const active = this.props.favoriteList.find((item) => {
       return item.imdbID === imdbID;
     });
-    if(active){
-        return true;
+    if (active) {
+      return true;
     }
   };
   render() {
@@ -21,12 +21,12 @@ class MovieItem extends Component {
           <h3 className="movie-item__title">
             {Title}&nbsp;({Year})
           </h3>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="movie-item__add-button"
-            onClick={this.props.addFavoriteList(imdbID)}
+            onClick={() => this.props.addFavoriteList(imdbID)}
             disabled={this.ifIdInFavorites(imdbID)}
-            >
+          >
             {this.ifIdInFavorites(imdbID) ? "Добавлено" : "Добавить в список"}
           </button>
         </div>
@@ -35,15 +35,15 @@ class MovieItem extends Component {
   }
 }
 const mapStateToProps = (state) => {
-    return {
-        favoritesList: state.favoritesList
-    }
-}
+  return {
+    favoriteList: state.favoriteList,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
-    return {
-        addFavoriteList : (imdbID) => {
-            dispatch(addFavoriteList(imdbID))
-        }
-    }
-}
+  return {
+    addFavoriteList: (imdbID) => {
+      dispatch(addFavoriteList(imdbID));
+    },
+  };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(MovieItem);

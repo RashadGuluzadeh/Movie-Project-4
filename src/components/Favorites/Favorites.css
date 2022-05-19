@@ -16,7 +16,11 @@
 .favorites__list {
     margin-bottom: 24px;
 }
-
+.favorites__ {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
 .favorites__save {
     border: none;
     background-color: #496DDB;
@@ -24,10 +28,15 @@
     color: #FFEEDB;
     font-size: 14px;
     transition: all 0.2s linear;
+    text-decoration: none;
+}
+.favorites__link__btn{
+    border: none;
+    background: none;
 }
 
 .favorites__save:hover {
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.6;
     transition: all 0.2s linear;
 }

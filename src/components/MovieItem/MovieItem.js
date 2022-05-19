@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import { addToList } from "../../actions/action";
-import { connect } from "react-redux";
 import "./MovieItem.css";
+import { connect } from "react-redux";
+import { addFavoriteList } from "../../redux/actions";
 
 class MovieItem extends Component {
-  state = {
-    favorited: false,
+  ifIdInFavorites = (imdbID) => {
+    const active = this.props.favoritesList.find((item) => {
+      return item.imdbID === imdbID;
+    });
+    if(active){
+        return true;
+    }
   };
-  addToList() {
-    this.setState({ favorited: !this.state.favorited });
-    this.props.addToList(this.props.movie);
-  }
   render() {
-    console.log(this.props);
-    const { Title, Year, Poster } = this.props.movie;
+    const { Title, Year, Poster, imdbID } = this.props;
     return (
       <article className="movie-item">
         <img className="movie-item__poster" src={Poster} alt={Title} />
@@ -21,20 +21,29 @@ class MovieItem extends Component {
           <h3 className="movie-item__title">
             {Title}&nbsp;({Year})
           </h3>
-          <button
-            onClick={() => this.addToList(this.props.movie)}
-            disabled={this.state.favorited ? true : null}
-            type="button"
+          <button 
+            type="button" 
             className="movie-item__add-button"
-          >
-            Добавить в список
+            onClick={this.props.addFavoriteList(imdbID)}
+            disabled={this.ifIdInFavorites(imdbID)}
+            >
+            {this.ifIdInFavorites(imdbID) ? "Добавлено" : "Добавить в список"}
           </button>
         </div>
       </article>
     );
   }
 }
-
-export default connect(null, { addToList: (movie) => addToList(movie) })(
-  MovieItem
-);
+const mapStateToProps = (state) => {
+    return {
+        favoritesList: state.favoritesList
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addFavoriteList : (imdbID) => {
+            dispatch(addFavoriteList(imdbID))
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MovieItem);

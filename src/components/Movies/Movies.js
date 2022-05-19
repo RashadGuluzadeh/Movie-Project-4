@@ -1,28 +1,27 @@
-import React, { Component } from "react";
-import MovieItem from "../MovieItem/MovieItem";
-import { connect } from "react-redux";
-import SearchBox from "../SearchBox/SearchBox";
-import "./Movies.css";
+import React, { Component } from 'react';
+import MovieItem from '../MovieItem/MovieItem';
+import './Movies.css';
+import { connect } from 'react-redux'
+
 
 class Movies extends Component {
-  render() {
-    return (
-      <div>
-        <SearchBox />
-        {this.props.movies.map(item => {
-            return <MovieItem movie={item}/>
-        })}
-      </div>
-    );
-  }
+    render() { 
+        return ( 
+            <ul className="movies">
+                {this.props.movies.map((movie) => (
+                    <li className="movies__item" key={movie.imdbID}>
+                        <MovieItem {...movie} />
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 }
-function mapStateToProps(state) {
-  {
-    console.log(state);
-    return {
-        movies: state.movies,
-    };
-  }
-}
+ 
 
-export default connect(mapStateToProps, null)(Movies);
+const mapStateToProps = (state) => {
+    return {
+        movies : state.movies
+    }
+}
+export default connect(mapStateToProps)(Movies);

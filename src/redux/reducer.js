@@ -47,7 +47,7 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         title: action.payload.title,
-        listMeta: action.payload.listMovies,
+        listMovies: action.payload.listMovies,
       };
     case GET_MOVIE_INFO_INTO_STATE:
       return {

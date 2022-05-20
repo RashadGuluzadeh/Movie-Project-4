@@ -17,3 +17,24 @@
 .main-page__favorites {
     width: 35%;   
 }
+@media only screen and (max-width: 720px){
+    .main-page__content{
+        padding: 6vw calc(50%-40vw);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .main-page__main-section{
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 0;
+    }
+    .main-page__search-box{
+        margin-bottom: 4vw;
+    }
+    .main-page__favorites{
+        width: 35%;
+        display: flex;
+        justify-content: center;
+    }
+}

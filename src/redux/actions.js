@@ -97,6 +97,7 @@ export function getListIntoState(title, movies) {
 
 export function getList(id) {
   return function (dispatch) {
+    console.log(id);
     fetch(`https://acb-api.algoritmika.org/api/movies/list/${id}`)
       .then((res) => res.json())
       .then((data) => {
@@ -109,12 +110,14 @@ export function getList(id) {
 export function getMovieInfoByImdbID(movies) {
   return function (dispatch) {
     let movieDetailArray = [];
+    console.log(movies);
     movies.forEach((e) => {
+      console.log(e);
       fetch(`http://www.omdbapi.com/?i=${e}&apikey=${api}`)
         .then((res) => res.json())
         .then((data) => {
           movieDetailArray = [...movieDetailArray, { ...data }];
-          dispatch(getMovieInfoByImdbID(movieDetailArray));
+          dispatch(getMovieInfoToState(movieDetailArray));
         });
     });
   };

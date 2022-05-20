@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <h1 className="header__title">
-                    MustSee
+                    FreeMovieRating
                 </h1>
             </header>
         );

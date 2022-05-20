@@ -1,12 +1,94 @@
 .list-page {
     padding: 42px calc(50% - 300px);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .list-page__title {
     font-size: 34px;
     margin-bottom: 26px;
+    background-color: #496DDB;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    width: 110%;
 }
 
 .list-page ul li {
     font-size: 18px;
+}
+
+.box{
+    display: flex;
+    font-size: 18px;
+    background-color: #FFEEDB;
+    margin-bottom: 20px;
+    width: 110%;
+}
+.box img{
+    height: 100%;
+    margin-right: 20px;
+    width: 220px;
+    padding: 20px;
+    padding-right: 0px;
+}
+.info{
+    padding:0 0 0 40px;
+}
+.info h1{
+    font-weight:400;
+    text-align:left;
+    font-size:40px;
+    margin:30px 0 0 0;
+    letter-spacing:1px;
+}
+.info ul{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 10px;
+}
+.info ul li{
+    font-size: 14px;
+    font-weight: 400;
+}
+.info p {
+    margin: 20px 0 20px 0;
+    padding: 0 20px 0 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.imdb{
+    display: flex;
+    gap: 5px;
+    background-color: #f3ce13;
+    width: 90px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.director{
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.box button{
+    border: none;
+    background-color: #496DDB;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.box button:hover{
+    opacity: 0.7;
+    transition: .7;
+}
+.box button a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
 }

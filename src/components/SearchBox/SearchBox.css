@@ -39,3 +39,13 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+@media only screen and (max-width: 720px) {
+    .search-box__form{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .search-box__form-label{
+        font-size: 2vw;
+    }
+}

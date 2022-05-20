@@ -29,3 +29,11 @@
     opacity: 0.9;
     transition: all 0.2s linear;
 }
+@media only screen and (max-width: 720px){
+    .movie-item{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}

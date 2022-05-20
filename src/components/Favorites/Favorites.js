@@ -58,12 +58,13 @@ class Favorites extends Component {
           </button>
         ) : (
           <button className="favorites__link__btn">
-            <Link to={"/list/ + this.props.listID"}
-            type="button"
-            className="favorites__save"
-            target= "_blank"
+            <Link
+              to={`/list/${this.props.listID}`}
+              type="button"
+              className="favorites__save"
+              target="_blank"
             >
-            Перейти к выбранным фильмам
+              Перейти к выбранным фильмам
             </Link>
           </button>
         )}
@@ -74,19 +75,19 @@ class Favorites extends Component {
 const mapStateToProps = (state) => {
   return {
     favoriteList: state.favoriteList,
-    favoritesIDArray : state.favoritesIDArray,
-    listID : state.listID,
+    favoritesIDArray: state.favoritesIDArray,
+    listID: state.listID,
   };
 };
 
-const mapDispatchToProps = (dispatch) =>{
-    return {
-        removeMovieFromFavoriteList: (id) => {
-            dispatch(removeMovieFromFavoriteList(id))
-        },
-        postList: (title, favoritesIDArray) => {
-            dispatch(postList(title, favoritesIDArray))
-        }
-    }
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeMovieFromFavoriteList: (id) => {
+      dispatch(removeMovieFromFavoriteList(id));
+    },
+    postList: (title, favoritesIDArray) => {
+      dispatch(postList(title, favoritesIDArray));
+    },
+  };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

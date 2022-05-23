@@ -1,6 +1,7 @@
 .list-page {
     padding: 42px calc(50% - 300px);
     font-family: 'Montserrat', sans-serif;
+    /* width: 100%; */
 }
 
 .list-page__title {
@@ -91,4 +92,53 @@
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+}
+
+@media only screen and (max-width: 720px){
+    *{
+        overflow: hidden;
+    }
+    .list-page{
+        width: 720px;
+        padding-left: 0;
+    }
+    .list-page__title{
+        width: 100%;
+    }
+    .box{
+        width: 100%;
+    }
+    .box img{
+        height: 50vw;
+        margin-right: 20px;
+        width: 70vw;
+        padding: 20px;
+        padding-right: 0px;
+    }
+    .info {
+        padding-left: 20px;
+    }
+    .info h1{
+        font-size: 4.938vw;
+        width: 75%;
+    }
+    .info ul li {
+        font-size: 1.938vw;
+    }
+    .info p {
+        font-size: 1.938vw;
+        width: 70%;
+    }
+    .imdb{
+        font-size: 1.938vw;
+        width: 60px;
+    }
+    .director{
+        font-size: 1.938vw;
+    }
+    .box button{
+        font-size: 12px;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+    }
 }

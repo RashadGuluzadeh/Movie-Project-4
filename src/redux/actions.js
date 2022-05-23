@@ -25,6 +25,9 @@ export function fetchMovies(name) {
       .then(({ data }) => {
         dispatch(searchMovies(data.Search));
         console.log(data.Search);
+      })
+      .catch((err) => {
+        alert("Movies not found", err);
       });
   };
 }

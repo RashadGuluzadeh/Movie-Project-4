@@ -12,7 +12,7 @@
 @media only screen and (max-width: 720px) {
     .header{
         background: #496DDB;
-        padding: 3vw calc(50%-44vw) 2vw;
+        /* padding: 3vw calc(50%-44vw) 2vw !important; */
     }
     .header__title{
         font-size: 6vw;

@@ -18,26 +18,26 @@
     width: 35%;   
 }
 @media only screen and (max-width: 720px){
-    .main-page{
-        width: 720px;
-    }
-    .main-page__content{
-        padding: 6vw calc(50%-40vw);
+    .main-page__content {
+        padding: 20px calc(50% - 500px);
         display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-    }
-    .main-page__main-section{
-        box-sizing: border-box;
-        width: 100%;
-        padding-left: 0;
-    }
-    .main-page__search-box{
-        margin-bottom: 4vw;
-    }
-    .main-page__favorites{
-        width: 100%;
-        display: flex;
+        flex-direction: column-reverse;
         justify-content: center;
+        align-items: center;
+    }
+
+    .main-page__main-section {
+        padding-left: 0;
+        box-sizing: border-box;
+        width: 60%;
+    }
+    
+    .main-page__search-box {
+        margin-top: 30px;
+    }
+
+    .main-page__favorites {
+        margin-left: 0;
+        width: 60%;   
     }
 }

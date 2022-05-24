@@ -31,7 +31,7 @@
 }
 @media only screen and (max-width: 720px){
     .movie-item{
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         margin: 0 auto;

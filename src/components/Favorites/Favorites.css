@@ -15,11 +15,13 @@
 
 .favorites__list {
     margin-bottom: 24px;
+    
 }
 .favorites__ {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    border-bottom: 1px solid;
 }
 .favorites__save {
     border: none;
@@ -33,16 +35,33 @@
 .favorites__link__btn{
     border: none;
     background: none;
+    
 }
 
-.favorites__save:hover {
+.favorites__save:hover:not(:disabled) {
     cursor: pointer;
     opacity: 0.6;
     transition: all 0.2s linear;
 }
+.favorites__save:disabled {
+    cursor: not-allowed;
+    background-color: #d3d3d3;
+}
+.favorites__removeBtn{
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 2px 5px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.favorites__removeBtn:hover{
+    background-color: #496DDB;
+    transition: all 0.2s linear;
+    color: white;
+}
 @media only screen and (max-width:720px) {
-    /* .favorites{
-        display: flex;
-        justify-content: center;
-    } */
+    .favorites {
+        text-align: center;
+    }
 }

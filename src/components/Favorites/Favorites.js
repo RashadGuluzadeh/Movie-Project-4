@@ -23,6 +23,7 @@ class Favorites extends Component {
     this.props.postList(this.state.title, this.getImdbIDArray());
   };
   render() {
+    const {favoriteList} = this.props
     const { title, isSbm } = this.state;
     return (
       <div className="favorites">
@@ -37,7 +38,7 @@ class Favorites extends Component {
             return (
               <li key={item.imdbID} className="favorites__">
                 {item.Title} {item.Year}
-                <button
+                <button className="favorites__removeBtn"
                   onClick={() =>
                     this.props.removeMovieFromFavoriteList(item.imdbID)
                   }
@@ -53,6 +54,7 @@ class Favorites extends Component {
             type="button"
             className="favorites__save"
             onClick={this.saveListHandler}
+            disabled={title=== "" || favoriteList.length === 0}
           >
             Сохранить список
           </button>

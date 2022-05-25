@@ -12,8 +12,7 @@
     margin-left: 40px;
     background-color: white;
     display: inline;
-    letter-spacing: 0;
-    padding: 0px 10px;
+    padding: 10px 10px;
     letter-spacing: -2px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -25,6 +24,13 @@
     }
     .header__title{
         font-size: 6vw;
+        margin-left:5vw
+    }
+}
+@media only screen and (max-width: 460px) {
+
+    .header__title{
+        font-size: 10vw;
         margin-left:5vw
     }
 }

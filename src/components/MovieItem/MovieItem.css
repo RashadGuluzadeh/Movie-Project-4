@@ -35,5 +35,34 @@
         display: flex;
         justify-content: center;
         margin: 0 auto;
+        flex-direction: column;
     }
+    .movie-item__poster{
+        margin: auto;
+        height: 150px;
+    }
+    .movie-item__title {
+        text-align: center;
+        font-weight: 500;
+        margin-top: 10px;
+        font-size: 16px;
+        margin-bottom: 14px;
+      }
+    
+      .movie-item__add-button {
+        border: none;
+        background-color: #496ddb;
+        padding: 8px 12px;
+        color: #ffeedb;
+        font-size: 14px;
+        transition: all 0.2s linear;
+        margin: auto;
+        display: flex;
+      }
+    
+      .movie-item__add-button:hover {
+        cursor: pointer;
+        opacity: 0.9;
+        transition: all 0.2s linear;
+      }
 }

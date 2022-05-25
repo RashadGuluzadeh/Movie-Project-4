@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Favorites.css";
 import { connect } from "react-redux";
-import { removeMovieFromFavoriteList, postList } from "../../redux/actions";
+import { removeMovieFromFavoriteList, postList, getDisabled } from "../../redux/actions";
 import { Link } from "react-router-dom";
 
 class Favorites extends Component {
@@ -21,6 +21,7 @@ class Favorites extends Component {
   saveListHandler = () => {
     this.setState({ isSbm: true });
     this.props.postList(this.state.title, this.getImdbIDArray());
+    this.props.getDisabled(true)
   };
   render() {
     const {favoriteList} = this.props
@@ -42,6 +43,7 @@ class Favorites extends Component {
                   onClick={() =>
                     this.props.removeMovieFromFavoriteList(item.imdbID)
                   }
+                  disabled={isSbm}
                 >
                   X
                 </button>
@@ -79,6 +81,7 @@ const mapStateToProps = (state) => {
     favoriteList: state.favoriteList,
     favoritesIDArray: state.favoritesIDArray,
     listID: state.listID,
+    isSubmit : state.isSubmit
   };
 };
 
@@ -90,6 +93,9 @@ const mapDispatchToProps = (dispatch) => {
     postList: (title, favoritesIDArray) => {
       dispatch(postList(title, favoritesIDArray));
     },
+    getDisabled : (bool) => {
+      dispatch(getDisabled(bool));
+    }
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

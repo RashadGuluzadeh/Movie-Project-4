@@ -25,9 +25,9 @@ class MovieItem extends Component {
             type="button"
             className="movie-item__add-button"
             onClick={() => this.props.addFavoriteList(imdbID)}
-            disabled={this.ifIdInFavorites(imdbID)}
+            disabled={this.props.disabled}
           >
-            {this.ifIdInFavorites(imdbID) ? "Добавлено" : "Добавить в список"}
+             Добавить в список
           </button>
         </div>
       </article>
@@ -37,6 +37,7 @@ class MovieItem extends Component {
 const mapStateToProps = (state) => {
   return {
     favoriteList: state.favoriteList,
+    disabled: state.isSubmit
   };
 };
 const mapDispatchToProps = (dispatch) => {

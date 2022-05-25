@@ -14,6 +14,7 @@ const initialState = {
   listID: "",
   listMovies: [],
   movieDetails: [],
+  isSubmit : false,
 };
 
 function reducer(state = initialState, action) {
@@ -49,6 +50,11 @@ function reducer(state = initialState, action) {
         title: action.payload.title,
         listMovies: action.payload.listMovies,
       };
+      case "DISABLED": 
+      return {
+        ...state,
+        isSubmit : !state.isSubmit,
+      }
     case GET_MOVIE_INFO_INTO_STATE:
       return {
         ...state,

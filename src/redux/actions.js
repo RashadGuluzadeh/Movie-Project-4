@@ -79,6 +79,13 @@ export function postList(title, favoritesIDArray) {
   };
 }
 
+export function getDisabled(isSubmit) {
+  return {
+    type: "DISABLED",
+    paylaod : null,
+  };
+}
+
 export function getMovieInfoToState(movieDetails) {
   return {
     type: GET_MOVIE_INFO_INTO_STATE,

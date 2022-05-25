@@ -25,9 +25,9 @@ class MovieItem extends Component {
             type="button"
             className="movie-item__add-button"
             onClick={() => this.props.addFavoriteList(imdbID)}
-            disabled={this.props.disabled}
+            disabled={this.ifIdInFavorites(imdbID) || this.props.disabled}
           >
-             Добавить в список
+             {this.ifIdInFavorites(imdbID) ? "Добавлено" : "Добавить в список"}
           </button>
         </div>
       </article>
